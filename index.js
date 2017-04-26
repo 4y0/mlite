@@ -17,13 +17,13 @@ function LogLite(token, loglite_url) {
 
 LogLite.prototype.log = function(data, optionalKey, type) {
 
-	var d = q.defer();
 	var _this = this;
 
-	q.fcall( function() {
+	return q.fcall( function() {
 
-		var d2 = q.defer();
-		if(!data) throw new Error("Must pass data");
+		var d = q.defer();
+
+		if(!data) d.reject( new Error("Must pass data") );
 
 		
 
@@ -33,29 +33,21 @@ LogLite.prototype.log = function(data, optionalKey, type) {
 		}, function (err, resp, body){
 
 			if(err) {
-				d2.reject(err);
+				d.reject(err);
 				return;
 			}
 
 			if(body && body.status && body.status == 'error'){
-				d2.reject(body.message || "Some error occured");
+				d.reject(body.message || "Some error occured");
 				return;
 			} 
 
-			d2.resolve(body);
+			d.resolve(body);
 
 		});
 
-		return d2.promise;
+		return d.promise;
 	
-	})
-	.then( function (response) { 
-		
-		d.resolve(response);
-	})
-	.catch( function (err) {
-		
-		d.reject(err);
 	});
 
 	return d.promise;
