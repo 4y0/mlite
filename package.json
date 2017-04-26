@@ -1,0 +1,31 @@
+{
+  "name": "mlite",
+  "version": "0.0.1",
+  "description": "Wrapper for LOGLITE service",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha reporter --spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4y0/mlite.git"
+  },
+  "keywords": [
+    "logging",
+    "LOGLITE"
+  ],
+  "author": "4y0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4y0/mlite/issues"
+  },
+  "homepage": "https://github.com/4y0/mlite#readme",
+  "dependencies": {
+    "q": "1.5.0",
+    "request": "2.81.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "3.0.2"
+  }
+}
