@@ -34,3 +34,10 @@ mlite.errorX('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as ERROR-X
 NOTE:
 `mlite.errorX('DATA_TO_LOG', 'OPTIONAL_KEY')` Will attempt to stringify and log the stack trace if `DATA_TO_LOG` is an instance of the Error object while `mlite.error('DATA_TO_LOG', 'OPTIONAL_KEY');` will log the data passed to it as is.
 
+Also, it's possible to use `mlite` with a custom LOGLITE build. You can deploy and host your own LOGLITE instance. If this is the case, your `mlite` initialization will look something like this:
+```
+var mlite = require('mlite')('CUSTOM_LOGLITE_TOKEN', 'CUSTOM_LOGLITE_SERVERURL');
+//use mlite as you'd normally
+mlite.log('somedata'); //Log can be retrieved from your custom LOGLITE server
+```
+
