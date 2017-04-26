@@ -18,10 +18,19 @@ mlite.log(DATA_TO_LOG, OPTIONAL_KEY, TYPE);
 `DATA_TO_LOG` Is what you wish to log. 
 `OPTIONAL_KEY` Is a key (any string value) you can use to track logged entries. Very useful for storifying function calls. It is optional
 `TYPE` Is just for semantics and rendering on the LOGLITE dashboard. Examples could be `warning`, `info`, `error` e.t.c. To this end, mlite provides helper functions for basic log types. You can do any of the following:
-`mlite.info('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as INFO`
-`mlite.warning('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as WARNING`
-`mlite.error('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as ERROR`
-`mlite.errorX('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as ERROR-X`
-
-`mlite.errorX('DATA_TO_LOG', 'OPTIONAL_KEY')` Will attempt to stringify and log the stack trace if `DATA_TO_LOG` is an instance of the Error object while `mlite.error('DATA_TO_LOG', 'OPTIONAL_KEY');` will log the data passed to it as is.
+```
+mlite.info('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as INFO
+```
+```
+mlite.warning('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as WARNING
+```
+```
+mlite.error('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as ERROR
+```
+```
+mlite.errorX('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as ERROR-X
+```
+```
+mlite.errorX('DATA_TO_LOG', 'OPTIONAL_KEY') Will attempt to stringify and log the stack trace if `DATA_TO_LOG` is an instance of the Error object while mlite.error('DATA_TO_LOG', 'OPTIONAL_KEY'); will log the data passed to it as is.
+```
 
