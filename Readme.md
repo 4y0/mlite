@@ -30,7 +30,7 @@ mlite.error('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as ERROR
 ```
 mlite.errorX('DATA_TO_LOG', 'OPTIONAL_KEY'); //type is passed as ERROR-X
 ```
-```
-mlite.errorX('DATA_TO_LOG', 'OPTIONAL_KEY') Will attempt to stringify and log the stack trace if `DATA_TO_LOG` is an instance of the Error object while mlite.error('DATA_TO_LOG', 'OPTIONAL_KEY'); will log the data passed to it as is.
-```
+
+NOTE:
+`mlite.errorX('DATA_TO_LOG', 'OPTIONAL_KEY')` Will attempt to stringify and log the stack trace if `DATA_TO_LOG` is an instance of the Error object while `mlite.error('DATA_TO_LOG', 'OPTIONAL_KEY');` will log the data passed to it as is.
 
